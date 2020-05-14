@@ -1,0 +1,5 @@
+like caption, list common command that need when connect to host nginix by terminator
+connect host with specify host: ssh username@host (-p port)Smaple: ssh root@server.shopdaophuot.com -p 2222after that type "yes"and type password (it not appear because iOs hide for security)restart nginx:  service nginx restart
+-- 
+Regards, 
+Thang Pham
