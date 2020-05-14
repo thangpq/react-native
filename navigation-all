@@ -1,0 +1,51 @@
+// Must run some commands for terminal inside PROJECT FOLDER
+//https://reactnavigation.org/docs/getting-started
+
+import * as React from 'react';
+import { Button, View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+
+//RUN FIRST =>   npm install @react-navigation/stack
+import { createStackNavigator } from '@react-navigation/stack';
+
+function HomeScreen({navigation}) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+       title="Go to Details"
+       onPress={() => navigation.navigate('Details',{name: 'thang pham', age: 35})}
+     />
+    </View>
+  );
+}
+function DetailsScreen( {route, navigation}) {
+  const {name} = route.params;
+  const {age} = route.params;
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+      <Text>Hello: {JSON.stringify(name)}</Text>
+      <Text>Age: {JSON.stringify(age)}</Text>
+      <Button
+  title="Go to Home... "
+  onPress={() => navigation.push('Home')}
+/>
+    </View>
+  );
+}
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+       <Stack.Navigator initialRouteName="Home">
+         <Stack.Screen name="Home" component={HomeScreen} />
+         <Stack.Screen name="Details" component={DetailsScreen} />
+       </Stack.Navigator>
+     </NavigationContainer>
+  );
+}
+
+export default App;
