@@ -1,6 +1,12 @@
 // Must run some commands for terminal inside PROJECT FOLDER
 //https://reactnavigation.org/docs/getting-started
 
+// using Tab.Navigator 
+// terminal run inside project: npm install @react-navigation/bottom-tabs
+//declare Tab:
+const Tab = createBottomTabNavigator();
+
+
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
